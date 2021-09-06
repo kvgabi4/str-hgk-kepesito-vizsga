@@ -18,6 +18,8 @@ export class StudentFormComponent implements OnInit {
   studentForm: Student = {firstName:'', lastName:'', email:'', classroom: {_id: '',
     name:''}}
 
+  clicked: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private studentService: StudentHttpService,
@@ -35,7 +37,8 @@ export class StudentFormComponent implements OnInit {
     }
   }
 
-  saveStudent(form: NgForm){
+  saveStudent(form: NgForm) {
+    this.clicked = true;
     if(this.studentId){
       this.studentService.update(form.value, this.studentId).subscribe(
         () => this.router.navigate(['student-list']),
