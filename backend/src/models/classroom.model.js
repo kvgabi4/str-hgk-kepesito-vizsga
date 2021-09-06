@@ -5,9 +5,8 @@ module.exports = mongoose.model('Classroom', mongoose.Schema({
         type: String,
         required: true
     },
-    // building: { 
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Building',
-    //     required: true
-    // }
+    building: { 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Building'
+    }
 }), 'classrooms');

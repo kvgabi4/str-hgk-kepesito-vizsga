@@ -16,6 +16,8 @@ const buildingService = require('./building.service');
 
 exports.updateBuilding = (req, res, next) => {
   const id = req.params.id;
+  const className = req.body.className
+  console.log(className)
   const { name, floors, classrooms } = req.body;
   if (!floors || !name || !classrooms) {
       return next(
@@ -24,9 +26,7 @@ exports.updateBuilding = (req, res, next) => {
   }
 
   const update = {
-      name: name,
-      floors: floors,
-      classrooms: classrooms
+      className
   };
   return buildingService.update(req.params.id, update)
       .then(building => {

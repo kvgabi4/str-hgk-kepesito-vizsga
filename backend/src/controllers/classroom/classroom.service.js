@@ -8,7 +8,7 @@ exports.create = requestData => {
   return entity.save()
 };
 
-exports.findAll = () => Model.find().populate();
+exports.findAll = () => Model.find().populate('building');
 
 exports.findOne = id => Model.findById(id);
 
