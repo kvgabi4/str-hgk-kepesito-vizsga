@@ -298,6 +298,10 @@ components:
           type: number
         classroom:
           type: array
+          items:
+            $ref: '#/components/schemas/Classroom'
+    Classroom:
+      type: string
     Student:
       type: object
       required:

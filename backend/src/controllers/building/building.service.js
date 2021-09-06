@@ -10,4 +10,4 @@
 
 exports.update = (buildingId, className) => Building.findByIdAndUpdate(buildingId, className, {new: true});
 
-exports.getAll = () => Building.find().populate('building');
+exports.getAll = () => Building.find().populate('classrooms');
